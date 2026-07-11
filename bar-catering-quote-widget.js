@@ -287,32 +287,58 @@
     if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
   }
 
-  function submitForm(event) {
-    event.preventDefault();
-    var data = collectData();
-    var quote = estimate(data);
-    var subject = "Bar catering ön teklif talebi";
-    var body = buildMessage(data, quote);
-    var mailto = "mailto:" + encodeURIComponent(email) +
-      "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(body);
+ function submitForm(event) {
+  event.preventDefault();
 
-    showToast("Ön teklif aralığı hazır. E-posta taslağı açılıyor.");
-    window.setTimeout(function () {
+  var data = collectData();
+  var quote = estimate(data);
+  var subject = "Bar catering ön teklif talebi";
+  var body = buildMessage(data, quote);
+
+  var mailto =
+    "mailto:" + encodeURIComponent(email) +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(body);
+
+  showToast("Ön teklif aralığı hazır. E-posta taslağı açılıyor.");
+
+  window.setTimeout(function () {
+    if (typeof window.reportEmailConversion === "function") {
+      window.reportEmailConversion(mailto);
+    } else {
       window.location.href = mailto;
-    }, 250);
+    }
+  }, 250);
+}
+
+function openWhatsapp(event) {
+  event.preventDefault();
+
+  // WhatsApp bağlantısı bir form submit butonu olmadığı için
+  // zorunlu alanları ayrıca kontrol ediyoruz.
+  if (!form.reportValidity()) {
+    return;
   }
 
-  function openWhatsapp(event) {
-    event.preventDefault();
-    var normalized = phone.replace(/[^\d]/g, "");
-    if (!normalized) return;
+  var normalized = phone.replace(/[^\d]/g, "");
+  if (!normalized) return;
 
-    var data = collectData();
-    var quote = estimate(data);
-    var message = buildMessage(data, quote);
-    window.open("https://wa.me/" + normalized + "?text=" + encodeURIComponent(message), "_blank", "noopener");
+  var data = collectData();
+  var quote = estimate(data);
+  var message = buildMessage(data, quote);
+
+  var whatsappUrl =
+    "https://wa.me/" +
+    normalized +
+    "?text=" +
+    encodeURIComponent(message);
+
+  if (typeof window.reportWhatsAppConversion === "function") {
+    window.reportWhatsAppConversion(whatsappUrl);
+  } else {
+    window.open(whatsappUrl, "_blank", "noopener");
   }
+}
 
   function createForm() {
     var eventType = el("select", { class: "ces-quote-select", name: "eventType", required: "required" }, [
