@@ -37,21 +37,17 @@
     return false;
   }
 
-  function reportWhatsAppConversion(url) {
-    const callback = function () {
-      if (typeof url !== "undefined") {
-        window.location.href = url;
-      }
-    };
+ function reportWhatsAppConversion(url) {
+  gtag("event", "conversion", {
+    send_to: "AW-18308903919/tP1zCLqwws4cEO_nrppE"
+  });
 
-    gtag("event", "conversion", {
-      send_to: "AW-18308903919/tP1zCLqwws4cEO_nrppE",
-      event_callback: callback,
-      event_timeout: 2000
-    });
-
-    return false;
+  if (typeof url !== "undefined") {
+    window.open(url, "_blank", "noopener");
   }
+
+  return false;
+}
 </script>
     
     <style>
