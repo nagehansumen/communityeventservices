@@ -40,11 +40,21 @@ window.CES = {
     technical: "Mikrofon, ses sistemi, projeksiyon"
   },
 
-  /* --- Form ---------------------------------------------------------------
-     formEndpoint doluysa form doğrudan oraya gönderilir (Formspree, Basin,
-     Netlify Forms vb.). Boşsa form, girilen bilgileri WhatsApp mesajı olarak
-     hazırlar — hiçbir durumda "gönderildi" yanılgısı oluşturmaz. */
+  /* --- Form gönderimi ---------------------------------------------------
+     Form, doldurulan bilgileri doğrudan communityeventservices@gmail.com
+     adresine gönderir. Bunun için aşağıdaki iki alandan BİRİ doldurulmalı.
+
+     A) Web3Forms (önerilen, hesap açmaya gerek yok)
+        1. web3forms.com adresine girin.
+        2. "Create Access Key" kutusuna communityeventservices@gmail.com yazın.
+        3. Gelen anahtarı e-postadan kopyalayıp aşağıya yapıştırın.
+
+     B) Formspree
+        formspree.io üzerinden form oluşturup verdiği adresi endpoint'e yazın.
+
+     İkisi de boşsa form gönderilemez ve ziyaretçiye hata mesajı gösterilir. */
   form: {
-    endpoint: ""                 // örn. "https://formspree.io/f/xxxxxxx"
+    web3formsKey: "",   // örn. "a1b2c3d4-0000-0000-0000-abcdefabcdef"
+    endpoint:     ""    // örn. "https://formspree.io/f/xxxxxxx"
   }
 };

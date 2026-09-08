@@ -368,7 +368,7 @@
   function form() {
     var f = $("#teklif-form");
     if (!f) return;
-    var success = $(".form-success");
+    var success_panel = $(".form-success");
     var btn = $("button[type=submit]", f);
     var msgs = {
       required: "Bu alan gerekli.",
@@ -405,57 +405,60 @@
 
       var data = {};
       fields.forEach(function (el) { if (el.name) data[el.name] = el.value.trim(); });
-      var endpoint = ((CFG.form || {}).endpoint || "").trim();
+      var cfgForm = CFG.form || {};
+      var key = (cfgForm.web3formsKey || "").trim();
+      var endpoint = (cfgForm.endpoint || "").trim();
+      var errBox = $("[data-form-error]", f);
+      if (errBox) errBox.textContent = "";
       btn.disabled = true;
       var oldLabel = btn.innerHTML;
       btn.innerHTML = "<span>Gönderiliyor…</span>";
 
-      function done(mode) {
+      function success() {
         f.style.display = "none";
-        success.classList.add("is-on");
-        var note = $("[data-success-note]", success);
-        if (note) {
-          note.textContent = mode === "post"
-            ? "Bilgileriniz bize ulaştı. En kısa sürede sizinle iletişime geçeceğiz."
-            : "Bilgileriniz e-posta uygulamanızda hazırlandı. Göndermek için açılan pencereden onaylamanız yeterli.";
+        success_panel.classList.add("is-on");
+        success_panel.setAttribute("tabindex", "-1");
+        success_panel.focus();
+        confettiBurst(success_panel);
+      }
+      function failure() {
+        btn.disabled = false;
+        btn.innerHTML = oldLabel;
+        if (errBox) {
+          errBox.textContent = "Form şu anda gönderilemedi. Lütfen WhatsApp veya e-posta ile ulaşın.";
         }
-        success.setAttribute("tabindex", "-1");
-        success.focus();
-        confettiBurst(success);
       }
 
-      if (endpoint) {
-        fetch(endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify(data)
-        }).then(function (r) {
-          if (!r.ok) throw new Error("post failed");
-          done("post");
-        }).catch(function () {
-          btn.disabled = false; btn.innerHTML = oldLabel;
-          var box = $("[data-form-error]", f);
-          if (box) box.textContent = "Form şu anda gönderilemedi. Bize WhatsApp veya e-posta ile ulaşabilirsiniz.";
-        });
+      var url, body, headers = { "Content-Type": "application/json", "Accept": "application/json" };
+      if (key) {
+        url = "https://api.web3forms.com/submit";
+        body = {
+          access_key: key,
+          subject: "Web sitesi teklif talebi — " + (data.company || data.name || ""),
+          from_name: "Community Event Services",
+          "İsim Soyisim": data.name,
+          "Şirket": data.company,
+          "E-posta": data.email,
+          "Telefon": data.phone,
+          "Etkinlik türü": data.event_type || "-",
+          "Katılımcı sayısı": data.participant_count || "-",
+          "Beklenti": data.expectations || "-"
+        };
+      } else if (endpoint) {
+        url = endpoint;
+        body = data;
       } else {
-        var lines = [
-          "Teklif talebi — Community Event Services",
-          "",
-          "İsim: " + data.name,
-          "Şirket: " + data.company,
-          "E-posta: " + data.email,
-          "Telefon: " + data.phone,
-          "Etkinlik türü: " + (data.event_type || "-"),
-          "Katılımcı: " + (data.participant_count || "-"),
-          "Beklenti: " + (data.expectations || "-")
-        ].join("\n");
-        var to = (CFG.contact || {}).email || "";
-        var subject = "Teklif talebi — " + (data.company || data.name || "Web sitesi formu");
-        var url = "mailto:" + to + "?subject=" + encodeURIComponent(subject) +
-                  "&body=" + encodeURIComponent(lines);
-        window.location.href = url;
-        done("mail");
+        failure();
+        return;
       }
+
+      fetch(url, { method: "POST", headers: headers, body: JSON.stringify(body) })
+        .then(function (r) { return r.json().catch(function () { return { ok: r.ok }; }); })
+        .then(function (res) {
+          if (res && (res.success === true || res.ok === true || res.ok === "true")) success();
+          else throw new Error("gönderilemedi");
+        })
+        .catch(failure);
     });
   }
 
