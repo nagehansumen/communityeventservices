@@ -54,7 +54,7 @@ window.CES = {
 
      İkisi de boşsa form gönderilemez ve ziyaretçiye hata mesajı gösterilir. */
   form: {
-    web3formsKey: "",   // örn. "a1b2c3d4-0000-0000-0000-abcdefabcdef"
+    web3formsKey: "",   // "3de3ca5f-1002-4b8e-a5e3-ca05cc3c49ab"
     endpoint:     ""    // örn. "https://formspree.io/f/xxxxxxx"
   }
 };
