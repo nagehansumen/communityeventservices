@@ -1,0 +1,362 @@
+:root {
+  --ink: #1d1d1b;
+  --ink-soft: #55534c;
+  --yellow: #F7EBA8;
+  --peach: #F8CBA8;
+  --blue: #E1F4FB;
+  --deal: #F1E57E;
+  --line: rgba(29, 29, 27, .14);
+
+  --sweet: #F06EAA;
+  --sour: #8ACB6B;
+  --spice: #F29A2E;
+  --hot: #E63A2A;
+
+  --display: "Oranienbaum", "Didot", "Bodoni 72", Georgia, serif;
+  --body: "Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+
+  --pad: clamp(20px, 6vw, 32px);
+  --header-h: 112px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  color: var(--ink);
+  background: var(--yellow);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+ul, ol { list-style: none; margin: 0; padding: 0; }
+h1, h2, h3, p { margin: 0; }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Header ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--hdr, var(--yellow));
+  transition: background-color .35s ease;
+  padding-top: env(safe-area-inset-top);
+}
+.topbar__row {
+  display: flex;
+  justify-content: center;
+  padding: 8px var(--pad) 2px;
+}
+.topbar__logo img { height: 30px; width: auto; }
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 4px var(--pad) 8px;
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+}
+.tabs::-webkit-scrollbar { display: none; }
+.tab {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #5c5a52;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color .2s, color .2s;
+}
+.tab.is-active { background: var(--ink); color: #fff; }
+
+/* Logodaki çizgilerden türetilen renk şeridi */
+.stripe {
+  height: 3px;
+  background: linear-gradient(90deg,
+    #C34D96 0 7.6%, #36B3B0 0 15.3%, #DACE31 0 23%, #E6332A 0 30.7%,
+    #452A6C 0 38.4%, #97529A 0 46.1%, #93C023 0 53.8%, #1B6376 0 61.5%,
+    #A57C24 0 69.2%, #2B4594 0 76.9%, #E6511F 0 84.6%, #6A4493 0 92.3%, #43958D 0);
+}
+
+/* ---------- Sections ---------- */
+.section { position: relative; overflow: hidden; padding-bottom: 56px; }
+.section--cocktail, .section--deals { background: var(--yellow); }
+.section--food { background: var(--peach); }
+.section--drinks { background: var(--blue); }
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+.wrap--wide { max-width: 760px; }
+
+.hero {
+  position: relative;
+  min-height: 150px;
+  display: grid;
+  place-items: center;
+  padding: 28px var(--pad) 14px;
+}
+.hero--plain { min-height: 120px; }
+.hero__title {
+  position: relative;
+  z-index: 1;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(36px, 11vw, 64px);
+  white-space: nowrap;
+  line-height: .9;
+  letter-spacing: -.01em;
+  text-align: center;
+}
+.hero__art {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+.hero__art--left  { left: -18px; }
+.hero__art--right { right: -34px; }
+
+.section--cocktail .hero__art--left  { width: 42px; top: 8px; transform: rotate(-8deg); }
+.section--cocktail .hero__art--right { width: 80px; top: 14px; transform: rotate(10deg); }
+.hero__art--burger { width: 118px; top: 24px; right: -40px; transform: rotate(-6deg); }
+.hero__art--shot   { width: 66px; top: 16px; right: -18px; }
+.hero__art--wine   { width: 42px; top: 22px; left: -14px; transform: rotate(8deg); }
+
+.section--food .hero { justify-items: start; }
+.section--food .hero__title { text-align: left; padding-right: 90px; }
+
+@media (min-width: 640px) {
+  .section--cocktail .hero__art--left  { width: 80px; left: 6%; }
+  .section--cocktail .hero__art--right { width: 150px; right: 6%; }
+  .hero__art--burger { width: 220px; right: 4%; }
+  .hero__art--shot   { width: 120px; right: 8%; }
+  .hero__art--wine   { width: 80px; left: 8%; }
+  .section--food .hero { justify-items: center; }
+  .section--food .hero__title { text-align: center; padding: 0; }
+}
+
+.tail-art {
+  margin: 28px auto 0;
+  pointer-events: none;
+}
+.tail-art--fries { width: 72px; transform: rotate(-8deg); }
+
+/* ---------- Cocktails ---------- */
+.note {
+  text-align: center;
+  font-size: 12.5px;
+  letter-spacing: .03em;
+  color: var(--ink-soft);
+}
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 12px 0 20px;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+.legend li { display: flex; align-items: center; gap: 5px; }
+
+.cocktails { counter-reset: none; }
+.cocktail {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  column-gap: 6px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+.cocktail:first-child { border-top: 0; }
+.cocktail__no {
+  font-family: var(--display);
+  font-size: 21px;
+  line-height: 1;
+  padding-top: 1px;
+}
+.cocktail__name {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+.prices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 6px 0 6px;
+}
+.price-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  background: rgba(255, 255, 255, .6);
+  border: 1px solid var(--line);
+}
+.price-chip b { font-weight: 600; font-size: 13px; font-variant-numeric: tabular-nums; }
+.price-chip--mock { background: transparent; }
+
+.desc {
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+.tastes { display: flex; gap: 5px; margin-top: 6px; }
+.taste-icon { width: 17px; height: 17px; flex: none; }
+.legend .taste-icon { width: 15px; height: 15px; }
+
+/* ---------- Generic list (yemek / içecek) ---------- */
+.item {
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+}
+.item:first-child { border-top: 0; }
+.item__head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.item__name {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+.item__price {
+  flex: none;
+  font-size: 14.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.item .desc { margin-top: 3px; }
+
+.group { margin-top: 28px; }
+.group:first-child { margin-top: 8px; }
+.group__title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 1.05;
+  padding-bottom: 8px;
+  border-bottom: 1.5px solid var(--ink);
+  margin-bottom: 4px;
+}
+.group__cols {
+  display: flex;
+  gap: 12px;
+  font-family: var(--body);
+  font-size: 11.5px;
+  color: var(--ink-soft);
+}
+.group__cols span, .item__price--col { width: 62px; text-align: right; }
+
+.group--compact .item { padding: 8px 0; }
+.group--compact .item__name { font-size: 14px; font-weight: 400; }
+.group--compact .item__price { font-size: 14px; }
+
+/* 5+1 kutusu */
+.deal {
+  margin-top: 40px;
+  background: var(--deal);
+  border-radius: 18px;
+  padding: 6px 16px;
+  box-shadow: 0 1px 0 rgba(29, 29, 27, .12);
+}
+.deal__row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px dashed rgba(29, 29, 27, .25);
+}
+.deal__row:first-child { border-top: 0; }
+.deal__tag {
+  font-family: var(--display);
+  font-size: 23px;
+  line-height: 1;
+  width: 42px;
+}
+.deal__name { flex: 1; font-size: 15.5px; font-weight: 500; }
+.deal__price { font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* ---------- Campaigns ---------- */
+.campaigns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 560px) {
+  .campaigns { grid-template-columns: 1fr 1fr; }
+}
+.campaign {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+}
+.campaign img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--yellow);
+  border-top: 1px solid var(--line);
+  padding: 40px var(--pad) calc(40px + env(safe-area-inset-bottom));
+  text-align: center;
+}
+.footer img { width: 120px; margin: 0 auto 18px; }
+.footer p {
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 34em;
+  margin: 0 auto;
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: 94vw;
+  max-height: 92vh;
+}
+.lightbox::backdrop { background: rgba(0, 0, 0, .82); }
+.lightbox img { max-height: 88vh; width: auto; border-radius: 12px; }
+.lightbox__close {
+  position: fixed;
+  top: calc(12px + env(safe-area-inset-top));
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ink);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
