@@ -41,6 +41,15 @@
 .yb-step p{margin:0;font-size:.98rem;line-height:1.5;color:#EEE6F4}
 @media(max-width:900px){.yb-hero__grid{grid-template-columns:1fr}}
 @media(max-width:560px){.yb-collage{grid-template-columns:1fr 1fr}.yb-c1{grid-row:auto;grid-column:1/3}.yb-c1 .ph{aspect-ratio:4/3}}
+.yb-marquee{overflow:hidden;margin-top:14px}
+.yb-track{display:flex;gap:14px;width:max-content;animation:ybLeft 70s linear infinite}
+.yb-track--right{animation-name:ybRight}
+.yb-marquee:hover .yb-track{animation-play-state:paused}
+.yb-cell{flex:none;height:clamp(200px,24vw,340px)}
+.yb-cell .ph{height:100%;width:auto;max-width:none;aspect-ratio:auto;object-fit:cover}
+@keyframes ybLeft{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 7px))}}
+@keyframes ybRight{from{transform:translateX(calc(-50% - 7px))}to{transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.yb-track{animation:none}.yb-marquee{overflow-x:auto}}
 </style>
 <!-- GOOGLE ETİKETİ: index.html'e eklediğiniz Google etiket kodunu (gtag.js) BU SATIRIN YERİNE yapıştırın.
      Meta Pixel kullanılacaksa onun kodu da buraya gelir. -->
@@ -114,6 +123,64 @@
    </div>
   </div>
  </div>
+</section><section class="block block--cream section">
+ <div class="wrap">
+  <div class="grid g-2 mb-l" style="align-items:end">
+    <div><p class="eyebrow rv">Galeri</p><h2 class="display t-xl rv">Geçmiş yılbaşı etkinliklerinden</h2></div>
+    <p class="copy rv">Ofis kutlamalarından büfe kurulumlarına, önceki yıllarda ekiplerle birlikte kurduğumuz yılbaşı etkinliklerinden kareler.</p>
+  </div>
+  </div>
+  <div class="yb-marquee"><div class="yb-track yb-track--right"><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-galeri-03-700.webp" srcset="assets/img/yb-galeri-03-700.webp 700w, assets/img/yb-galeri-03-1200.webp 1200w" sizes="(max-width:767px) 45vw, 22vw" alt="Süslü ağacın yanında dans eden ekip" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-galeri-01-700.webp" srcset="assets/img/yb-galeri-01-700.webp 700w, assets/img/yb-galeri-01-1200.webp 1200w" sizes="(max-width:767px) 45vw, 22vw" alt="Peynir tabağı ve yılbaşı çiçekleri" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-galeri-05-700.webp" srcset="assets/img/yb-galeri-05-700.webp 700w, assets/img/yb-galeri-05-1200.webp 1200w" sizes="(max-width:767px) 45vw, 22vw" alt="Tatlı büfesi ve kar desenli camlar" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-galeri-06-700.webp" srcset="assets/img/yb-galeri-06-700.webp 700w" sizes="(max-width:767px) 45vw, 22vw" alt="Yılbaşı partisinde fotoğraf çeken ekip" width="700" height="933" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-quiz-01-700.webp" srcset="assets/img/yb-quiz-01-700.webp 700w, assets/img/yb-quiz-01-1200.webp 1200w" sizes="(max-width:767px) 45vw, 22vw" alt="Yılbaşı quiz etkinliğinde kazanan takım" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-kutlama-01-700.webp" srcset="assets/img/yb-kutlama-01-700.webp 700w, assets/img/yb-kutlama-01-1200.webp 1200w" sizes="(max-width:767px) 45vw, 22vw" alt="Yılbaşı kutlamasında kadeh kaldıran ekip" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-giris-01-700.webp" srcset="assets/img/yb-giris-01-700.webp 700w, assets/img/yb-giris-01-1020.webp 1020w" sizes="(max-width:767px) 45vw, 22vw" alt="Çelenklerle süslenmiş mekan girişi" width="1020" height="1360" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-galeri-03-700.webp" srcset="assets/img/yb-galeri-03-700.webp 700w, assets/img/yb-galeri-03-1200.webp 1200w" sizes="(max-width:767px) 45vw, 22vw" alt="Süslü ağacın yanında dans eden ekip" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-galeri-01-700.webp" srcset="assets/img/yb-galeri-01-700.webp 700w, assets/img/yb-galeri-01-1200.webp 1200w" sizes="(max-width:767px) 45vw, 22vw" alt="Peynir tabağı ve yılbaşı çiçekleri" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-galeri-05-700.webp" srcset="assets/img/yb-galeri-05-700.webp 700w, assets/img/yb-galeri-05-1200.webp 1200w" sizes="(max-width:767px) 45vw, 22vw" alt="Tatlı büfesi ve kar desenli camlar" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-galeri-06-700.webp" srcset="assets/img/yb-galeri-06-700.webp 700w" sizes="(max-width:767px) 45vw, 22vw" alt="Yılbaşı partisinde fotoğraf çeken ekip" width="700" height="933" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-quiz-01-700.webp" srcset="assets/img/yb-quiz-01-700.webp 700w, assets/img/yb-quiz-01-1200.webp 1200w" sizes="(max-width:767px) 45vw, 22vw" alt="Yılbaşı quiz etkinliğinde kazanan takım" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-kutlama-01-700.webp" srcset="assets/img/yb-kutlama-01-700.webp 700w, assets/img/yb-kutlama-01-1200.webp 1200w" sizes="(max-width:767px) 45vw, 22vw" alt="Yılbaşı kutlamasında kadeh kaldıran ekip" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-giris-01-700.webp" srcset="assets/img/yb-giris-01-700.webp 700w, assets/img/yb-giris-01-1020.webp 1020w" sizes="(max-width:767px) 45vw, 22vw" alt="Çelenklerle süslenmiş mekan girişi" width="1020" height="1360" loading="lazy" decoding="async"></div></div></div>
+  <div class="yb-marquee"><div class="yb-track yb-track--left"><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-galeri-07-700.webp" srcset="assets/img/yb-galeri-07-700.webp 700w, assets/img/yb-galeri-07-1400.webp 1400w" sizes="(max-width:767px) 45vw, 22vw" alt="Yılbaşı temalı açık büfe" width="1400" height="1050" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-galeri-04-700.webp" srcset="assets/img/yb-galeri-04-700.webp 700w, assets/img/yb-galeri-04-1200.webp 1200w" sizes="(max-width:767px) 45vw, 22vw" alt="Ofiste yılbaşı kutlaması" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-galeri-02-700.webp" srcset="assets/img/yb-galeri-02-700.webp 700w, assets/img/yb-galeri-02-1200.webp 1200w" sizes="(max-width:767px) 45vw, 22vw" alt="Hoş geldin yazılı yılbaşı büfesi" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-parti-01-700.webp" srcset="assets/img/yb-parti-01-700.webp 700w, assets/img/yb-parti-01-1086.webp 1086w" sizes="(max-width:767px) 45vw, 22vw" alt="2026 yılbaşı partisinde dans eden kalabalık" width="1086" height="1448" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-kokteyl-01-700.webp" srcset="assets/img/yb-kokteyl-01-700.webp 700w, assets/img/yb-kokteyl-01-1400.webp 1400w" sizes="(max-width:767px) 45vw, 22vw" alt="Zencefilli kurabiye süslemeli yılbaşı kokteyli" width="1400" height="1050" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-mekan-01-700.webp" srcset="assets/img/yb-mekan-01-700.webp 700w, assets/img/yb-mekan-01-1400.webp 1400w" sizes="(max-width:767px) 45vw, 22vw" alt="Yılbaşı için süslenmiş etkinlik alanı" width="1400" height="2100" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-agac-01-700.webp" srcset="assets/img/yb-agac-01-700.webp 700w, assets/img/yb-agac-01-1400.webp 1400w" sizes="(max-width:767px) 45vw, 22vw" alt="Süslenmiş yılbaşı ağacı" width="1400" height="1867" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-galeri-07-700.webp" srcset="assets/img/yb-galeri-07-700.webp 700w, assets/img/yb-galeri-07-1400.webp 1400w" sizes="(max-width:767px) 45vw, 22vw" alt="Yılbaşı temalı açık büfe" width="1400" height="1050" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-galeri-04-700.webp" srcset="assets/img/yb-galeri-04-700.webp 700w, assets/img/yb-galeri-04-1200.webp 1200w" sizes="(max-width:767px) 45vw, 22vw" alt="Ofiste yılbaşı kutlaması" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-galeri-02-700.webp" srcset="assets/img/yb-galeri-02-700.webp 700w, assets/img/yb-galeri-02-1200.webp 1200w" sizes="(max-width:767px) 45vw, 22vw" alt="Hoş geldin yazılı yılbaşı büfesi" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-parti-01-700.webp" srcset="assets/img/yb-parti-01-700.webp 700w, assets/img/yb-parti-01-1086.webp 1086w" sizes="(max-width:767px) 45vw, 22vw" alt="2026 yılbaşı partisinde dans eden kalabalık" width="1086" height="1448" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-kokteyl-01-700.webp" srcset="assets/img/yb-kokteyl-01-700.webp 700w, assets/img/yb-kokteyl-01-1400.webp 1400w" sizes="(max-width:767px) 45vw, 22vw" alt="Zencefilli kurabiye süslemeli yılbaşı kokteyli" width="1400" height="1050" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-mekan-01-700.webp" srcset="assets/img/yb-mekan-01-700.webp 700w, assets/img/yb-mekan-01-1400.webp 1400w" sizes="(max-width:767px) 45vw, 22vw" alt="Yılbaşı için süslenmiş etkinlik alanı" width="1400" height="2100" loading="lazy" decoding="async"></div><div class="yb-cell"><img class="ph ph--block" src="assets/img/yb-agac-01-700.webp" srcset="assets/img/yb-agac-01-700.webp 700w, assets/img/yb-agac-01-1400.webp 1400w" sizes="(max-width:767px) 45vw, 22vw" alt="Süslenmiş yılbaşı ağacı" width="1400" height="1867" loading="lazy" decoding="async"></div></div></div>
+</section><section class="block block--cream section" id="planla" style="padding-top:clamp(40px,4vw,72px)">
+ <div class="wrap">
+  <div class="grid g-2" style="gap:clamp(36px,5vw,90px);align-items:start">
+   <div>
+     <p class="eyebrow rv">Teklif al</p>
+     <h2 class="display t-xl rv">2026'yı güzel bir anıyla <span class="hl hl--lime">kapatalım.</span></h2>
+     <p class="lede mt-m rv">İster küçük bir ekip buluşması ister kapsamlı bir şirket kutlaması olsun, yeni yıl etkinliğinizi birlikte tasarlayalım.</p>
+     <p class="copy mt-m rv">Tarihinizi ve katılımcı sayınızı paylaşın, size özel seçenekleri hazırlayalım.</p>
+     <div class="slotbox mt-l rv">
+       <p class="eyebrow">Hızlı yol</p>
+       <p class="display t-md" style="margin:0"><a href="tel:+905428055334" style="text-decoration:none">0542 805 53 34</a></p>
+       <p class="copy mt-m" style="font-size:.95rem">Hemen konuşmak isterseniz arayın ya da WhatsApp'tan yazın.</p>
+       <div style="display:flex;gap:10px;flex-wrap:wrap" class="mt-m">
+         <a class="btn" href="tel:+905428055334"><span>Hemen Ara</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+         <a class="btn btn--outline" data-c="wa-link" href="#" target="_blank" rel="noopener"><span>WhatsApp</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+       </div>
+     </div>
+   </div>
+   <div>
+     <form id="teklif-form" class="form" novalidate>
+<div class="field"><label for="f-name">İsim Soyisim <span class="req">*</span></label>
+  <input id="f-name" name="name" type="text" required autocomplete="name" aria-describedby="e-name"><span class="err" id="e-name" role="alert"></span></div>
+<div class="field"><label for="f-company">Şirket <span class="req">*</span></label>
+  <input id="f-company" name="company" type="text" required autocomplete="organization" aria-describedby="e-company"><span class="err" id="e-company" role="alert"></span></div>
+<div class="field"><label for="f-email">E-posta <span class="req">*</span></label>
+  <input id="f-email" name="email" type="email" required autocomplete="email" aria-describedby="e-email"><span class="err" id="e-email" role="alert"></span></div>
+<div class="field"><label for="f-phone">Telefon <span class="req">*</span></label>
+  <input id="f-phone" name="phone" type="tel" required autocomplete="tel" placeholder="0500 000 00 00" aria-describedby="e-phone"><span class="err" id="e-phone" role="alert"></span></div>
+<div class="field field--full"><label for="f-type">Hangi yılbaşı konseptiyle ilgileniyorsunuz?</label>
+  <select id="f-type" name="event_type" aria-describedby="e-type">
+    <option value="Yılbaşı — Henüz karar vermedim">Seçin</option><option value="Yılbaşı — Kurumsal Yılbaşı Partisi">Kurumsal Yılbaşı Partisi</option><option value="Yılbaşı — 2026 Dump Quiz">2026 Dump Quiz</option><option value="Yılbaşı — Christmas Kokteyl Workshop">Christmas Kokteyl Workshop</option><option value="Yılbaşı — Yılbaşı Süsü Atölyesi">Yılbaşı Süsü Atölyesi</option>
+    <option value="Yılbaşı — Henüz karar vermedim">Henüz karar vermedim</option>
+  </select><span class="err" id="e-type" role="alert"></span></div>
+<div class="field field--full"><label for="f-count">Tahmini katılımcı sayısı</label>
+  <input id="f-count" name="participant_count" type="text" inputmode="numeric" aria-describedby="e-count"><span class="err" id="e-count" role="alert"></span></div>
+<div class="field field--full"><label for="f-exp">Tarih, lokasyon ve beklentiniz</label>
+  <textarea id="f-exp" name="expectations" rows="4" placeholder="Örn. 19 Aralık akşamı, ofisimizde" aria-describedby="e-exp"></textarea><span class="err" id="e-exp" role="alert"></span></div>
+       <div class="field field--full">
+         <button class="btn btn--accent btn--lg" type="submit"><span>Birlikte Planlayalım</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+         <span class="err" data-form-error role="alert"></span>
+       </div>
+     </form>
+     <div class="form-success" role="status">
+       <h2 class="display t-lg">Teşekkür ederiz.</h2>
+       <p class="copy mt-m">Talebiniz bize ulaştı. Ekibimiz ihtiyaçlarınızı inceleyip en kısa zamanda size dönüş yapacak.</p>
+     </div>
+   </div>
+  </div>
+ </div>
 </section><svg class="blob" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" style="background:#F7F3F0"><path d="M0,64 C180,110 320,10 520,34 C720,58 820,120 1020,104 C1180,91 1300,30 1440,52 L1440,120 L0,120 Z" fill="#24112D"/></svg>
 <section class="block block--ink section--tight section" id="konseptler">
  <div class="wrap center" style="display:grid;gap:14px">
@@ -175,63 +242,6 @@
       <p class="copy mt-m rv">Yaratıcılığı ve yılbaşı heyecanını aynı masada buluşturuyoruz. Katılımcılar kendi yılbaşı süslerini tasarlarken günlük iş temposunun dışına çıkıp birlikte üretmenin keyfini yaşıyor.</p><p class="copy mt-m rv">Etkinlik sonunda herkes kendi hazırladığı süsle yılbaşından küçük bir hatıra götürüyor.</p>
       <a class="btn mt-m rv" style="background:#D8EE8A;color:#24112D" href="#planla" data-pick="Yılbaşı — Yılbaşı Süsü Atölyesi"><span>Yılbaşı Atölyesi İçin Teklif Al</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
     </div>
-  </div>
- </div>
-</section><section class="block block--cream section">
- <div class="wrap">
-  <div class="grid g-2 mb-l" style="align-items:end">
-    <div><p class="eyebrow rv">Galeri</p><h2 class="display t-xl rv">Geçmiş yılbaşı etkinliklerinden</h2></div>
-    <p class="copy rv">Ofis kutlamalarından büfe kurulumlarına, önceki yıllarda ekiplerle birlikte kurduğumuz yılbaşı etkinliklerinden kareler.</p>
-  </div>
-  <div class="mason"><div class="rv"><img class="ph ph--block" src="assets/img/yb-galeri-03-700.webp" srcset="assets/img/yb-galeri-03-700.webp 700w, assets/img/yb-galeri-03-1200.webp 1200w" sizes="(max-width:560px) 92vw, (max-width:1023px) 46vw, 31vw" alt="Süslü ağacın yanında dans eden ekip" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="rv"><img class="ph ph--block" src="assets/img/yb-galeri-07-700.webp" srcset="assets/img/yb-galeri-07-700.webp 700w, assets/img/yb-galeri-07-1400.webp 1400w" sizes="(max-width:560px) 92vw, (max-width:1023px) 46vw, 31vw" alt="Yılbaşı temalı açık büfe" width="1400" height="1050" loading="lazy" decoding="async"></div><div class="rv"><img class="ph ph--block" src="assets/img/yb-galeri-01-700.webp" srcset="assets/img/yb-galeri-01-700.webp 700w, assets/img/yb-galeri-01-1200.webp 1200w" sizes="(max-width:560px) 92vw, (max-width:1023px) 46vw, 31vw" alt="Peynir tabağı ve yılbaşı çiçekleri" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="rv"><img class="ph ph--block" src="assets/img/yb-galeri-04-700.webp" srcset="assets/img/yb-galeri-04-700.webp 700w, assets/img/yb-galeri-04-1200.webp 1200w" sizes="(max-width:560px) 92vw, (max-width:1023px) 46vw, 31vw" alt="Ofiste yılbaşı kutlaması" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="rv"><img class="ph ph--block" src="assets/img/yb-galeri-05-700.webp" srcset="assets/img/yb-galeri-05-700.webp 700w, assets/img/yb-galeri-05-1200.webp 1200w" sizes="(max-width:560px) 92vw, (max-width:1023px) 46vw, 31vw" alt="Tatlı büfesi ve kar desenli camlar" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="rv"><img class="ph ph--block" src="assets/img/yb-galeri-02-700.webp" srcset="assets/img/yb-galeri-02-700.webp 700w, assets/img/yb-galeri-02-1200.webp 1200w" sizes="(max-width:560px) 92vw, (max-width:1023px) 46vw, 31vw" alt="Hoş geldin yazılı yılbaşı büfesi" width="1200" height="1600" loading="lazy" decoding="async"></div><div class="rv"><img class="ph ph--block" src="assets/img/yb-galeri-06-700.webp" srcset="assets/img/yb-galeri-06-700.webp 700w" sizes="(max-width:560px) 92vw, (max-width:1023px) 46vw, 31vw" alt="Yılbaşı partisinde fotoğraf çeken ekip" width="700" height="933" loading="lazy" decoding="async"></div></div>
- </div>
-</section><section class="block block--cream section" id="planla">
- <div class="wrap">
-  <div class="grid g-2" style="gap:clamp(36px,5vw,90px);align-items:start">
-   <div>
-     <p class="eyebrow rv">Teklif al</p>
-     <h2 class="display t-xl rv">2026'yı güzel bir anıyla <span class="hl hl--lime">kapatalım.</span></h2>
-     <p class="lede mt-m rv">İster küçük bir ekip buluşması ister kapsamlı bir şirket kutlaması olsun, yeni yıl etkinliğinizi birlikte tasarlayalım.</p>
-     <p class="copy mt-m rv">Tarihinizi ve katılımcı sayınızı paylaşın, size özel seçenekleri hazırlayalım.</p>
-     <div class="slotbox mt-l rv">
-       <p class="eyebrow">Hızlı yol</p>
-       <p class="display t-md" style="margin:0"><a href="tel:+905428055334" style="text-decoration:none">0542 805 53 34</a></p>
-       <p class="copy mt-m" style="font-size:.95rem">Hemen konuşmak isterseniz arayın ya da WhatsApp'tan yazın.</p>
-       <div style="display:flex;gap:10px;flex-wrap:wrap" class="mt-m">
-         <a class="btn" href="tel:+905428055334"><span>Hemen Ara</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
-         <a class="btn btn--outline" data-c="wa-link" href="#" target="_blank" rel="noopener"><span>WhatsApp</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
-       </div>
-     </div>
-   </div>
-   <div>
-     <form id="teklif-form" class="form" novalidate>
-<div class="field"><label for="f-name">İsim Soyisim <span class="req">*</span></label>
-  <input id="f-name" name="name" type="text" required autocomplete="name" aria-describedby="e-name"><span class="err" id="e-name" role="alert"></span></div>
-<div class="field"><label for="f-company">Şirket <span class="req">*</span></label>
-  <input id="f-company" name="company" type="text" required autocomplete="organization" aria-describedby="e-company"><span class="err" id="e-company" role="alert"></span></div>
-<div class="field"><label for="f-email">E-posta <span class="req">*</span></label>
-  <input id="f-email" name="email" type="email" required autocomplete="email" aria-describedby="e-email"><span class="err" id="e-email" role="alert"></span></div>
-<div class="field"><label for="f-phone">Telefon <span class="req">*</span></label>
-  <input id="f-phone" name="phone" type="tel" required autocomplete="tel" placeholder="0500 000 00 00" aria-describedby="e-phone"><span class="err" id="e-phone" role="alert"></span></div>
-<div class="field field--full"><label for="f-type">Hangi yılbaşı konseptiyle ilgileniyorsunuz?</label>
-  <select id="f-type" name="event_type" aria-describedby="e-type">
-    <option value="Yılbaşı — Henüz karar vermedim">Seçin</option><option value="Yılbaşı — Kurumsal Yılbaşı Partisi">Kurumsal Yılbaşı Partisi</option><option value="Yılbaşı — 2026 Dump Quiz">2026 Dump Quiz</option><option value="Yılbaşı — Christmas Kokteyl Workshop">Christmas Kokteyl Workshop</option><option value="Yılbaşı — Yılbaşı Süsü Atölyesi">Yılbaşı Süsü Atölyesi</option>
-    <option value="Yılbaşı — Henüz karar vermedim">Henüz karar vermedim</option>
-  </select><span class="err" id="e-type" role="alert"></span></div>
-<div class="field field--full"><label for="f-count">Tahmini katılımcı sayısı</label>
-  <input id="f-count" name="participant_count" type="text" inputmode="numeric" aria-describedby="e-count"><span class="err" id="e-count" role="alert"></span></div>
-<div class="field field--full"><label for="f-exp">Tarih, lokasyon ve beklentiniz</label>
-  <textarea id="f-exp" name="expectations" rows="4" placeholder="Örn. 19 Aralık akşamı, ofisimizde" aria-describedby="e-exp"></textarea><span class="err" id="e-exp" role="alert"></span></div>
-       <div class="field field--full">
-         <button class="btn btn--accent btn--lg" type="submit"><span>Birlikte Planlayalım</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
-         <span class="err" data-form-error role="alert"></span>
-       </div>
-     </form>
-     <div class="form-success" role="status">
-       <h2 class="display t-lg">Teşekkür ederiz.</h2>
-       <p class="copy mt-m">Talebiniz bize ulaştı. Ekibimiz ihtiyaçlarınızı inceleyip en kısa zamanda size dönüş yapacak.</p>
-     </div>
-   </div>
   </div>
  </div>
 </section><svg class="blob" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" style="background:#F7F3F0"><path d="M0,96 C160,20 300,4 470,48 C640,92 760,116 940,86 C1120,56 1280,4 1440,36 L1440,120 L0,120 Z" fill="#F7F3F0"/></svg>
